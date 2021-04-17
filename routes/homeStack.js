@@ -20,7 +20,7 @@ export const HomeStack = ({ navigation }) => (
             name='Home'
             component={Home}
             options={{
-                headerTitle: () => <Header navigation={navigation}/>                           
+                headerTitle: () => <Header navigation={navigation} title='GameZone'/>                           
             }}
         />
         <Screen

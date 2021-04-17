@@ -1,20 +1,17 @@
-
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { Dimensions } from 'react-native';
-import { DrawerActions } from '@react-navigation/native';
 
-export default function Header({ navigation }) {
+export default function Header({ navigation, title }) {
     const openMenu = () => {
-        navigation.dispatch(DrawerActions.openDrawer());
+        navigation.openDrawer();
     }
 
     return (
         <View style={styles.header}>
             <MaterialIcons name='menu' size={28} onPress={openMenu} style={styles.icon} />
             <View>
-                <Text style={styles.headerText}>GameZone</Text>
+                <Text style={styles.headerText}>{ title }</Text>
             </View>
         </View>
     );
@@ -22,7 +19,7 @@ export default function Header({ navigation }) {
 
 const styles = StyleSheet.create({
     header: {
-        width: Dimensions.get('screen').width,
+        width: '100%',
         height: '100%',        
         flexDirection: 'row',
         alignItems: 'center',
@@ -36,6 +33,6 @@ const styles = StyleSheet.create({
     },
     icon: {
         position: 'absolute',
-        left: 16
+        left: 2
     }
 });

@@ -3,6 +3,8 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../screens/home";
 import ReviewDetails from "../screens/reviewDetails";
+import HeaderBg from '../shared/headerBg';
+
 
 import Header from '../shared/header';
 
@@ -13,14 +15,16 @@ export const HomeStack = ({ navigation }) => (
         headerMode='float'        
         screenOptions={{
             headerTintColor: '#444',
-            headerStyle: { backgroundColor: '#ccc', height: 100 },
+            headerStyle: { backgroundColor: '#ccc', height: 80 },
         }}
     >
         <Screen
             name='Home'
             component={Home}
             options={{
-                headerTitle: () => <Header navigation={navigation} title='GameZone'/>                           
+                headerTitle: () => <Header navigation={navigation} title='GameZone'/>,   
+                headerBackground: () => <HeaderBg/>
+                        
             }}
         />
         <Screen
